@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Memento", "Memento.vcxproj", "{A05F2795-E3D7-4299-91CB-D57A12726566}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{CE7C88C1-825C-4AC6-8EC3-E01AFA006D16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MementoUnitTests", "UnitTests\MementoUnitTests.csproj", "{CE7C88C1-825C-4AC6-8EC3-E01AFA006D16}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
