@@ -1,10 +1,8 @@
 namespace UnitTests
 {
     using Pertinax;
-
     using Xunit;
     using Xunit.Abstractions;
-    using static System.Net.Mime.MediaTypeNames;
 
     public class SimpleTypeTests
     {

@@ -70,8 +70,8 @@ void Memento<T>::Set(T rhs)
 	else if (T::typeid == UInt16::typeid)	*((unsigned short*)ref) = (unsigned short)rhs;
 	else if (T::typeid == Int32::typeid)	*((int*)ref) = (int)rhs;
 	else if (T::typeid == UInt32::typeid)	*((unsigned int*)ref) = (unsigned int)rhs;
-	else if (T::typeid == Int64::typeid)	*((long*)ref) = (__int64)rhs;
-	else if (T::typeid == UInt64::typeid)	*((unsigned long*)ref) = (unsigned __int64)rhs;
+	else if (T::typeid == Int64::typeid)	*((__int64*)ref) = (__int64)rhs;
+	else if (T::typeid == UInt64::typeid)	*((unsigned __int64*)ref) = (unsigned __int64)rhs;
 	else if (T::typeid == Char::typeid)		*((wchar_t*)ref) = (wchar_t)rhs;
 	else if (T::typeid == Single::typeid)	*((float*)ref) = (float)rhs;
 	else if (T::typeid == Double::typeid)	*((double*)ref) = (double)rhs;
