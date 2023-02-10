@@ -13,21 +13,19 @@ namespace UnitTests
             this.output = output;
         }
 
-        // TODO: use type.MinValue, type.MaxValue
-
-        [Fact] public void SByte() => Test((sbyte)1, (sbyte)99, (sbyte)0);
-        [Fact] public void Byte() => Test((byte)1, (byte)99, (byte)0);
-        [Fact] public void Int16() => Test((short)1, (short)99, (short)0);
-        [Fact] public void UInt16() => Test((ushort)1, (ushort)99, (ushort)0);
-        [Fact] public void Int32() => Test((int)1, (int)99, (int)0);
-        [Fact] public void UInt32() => Test((uint)1, (uint)99, (uint)0);
-        [Fact] public void Int64() => Test((long)1, (long)99, (long)0);
-        [Fact] public void UInt64() => Test((ulong)1, (ulong)99, (ulong)0);
-        [Fact] public void Char() => Test('a', 'z', 'x');
-        [Fact] public void Single() => Test((float)1.5, (float)99.5, (float)0.5);
-        [Fact] public void Double() => Test((double)1.5, (double)99.5, (double)0.5);
+        [Fact] public void SByte() => Test(sbyte.MinValue, sbyte.MaxValue, sbyte.MaxValue / 2);
+        [Fact] public void Byte() => Test(byte.MinValue, byte.MaxValue, byte.MaxValue / 2);
+        [Fact] public void Int16() => Test(short.MinValue, short.MaxValue, short.MaxValue / 2);
+        [Fact] public void UInt16() => Test(ushort.MinValue, ushort.MaxValue, ushort.MaxValue / 2);
+        [Fact] public void Int32() => Test(int.MinValue, int.MaxValue, int.MaxValue / 2);
+        [Fact] public void UInt32() => Test(uint.MinValue, uint.MaxValue, uint.MaxValue / 2);
+        [Fact] public void Int64() => Test(long.MinValue, long.MaxValue, long.MaxValue / 2);
+        [Fact] public void UInt64() => Test(ulong.MinValue, ulong.MaxValue, ulong.MaxValue / 2);
+        [Fact] public void Char() => Test(char.MinValue, char.MaxValue, char.MaxValue / 2);
+        [Fact] public void Single() => Test(float.MinValue, float.MaxValue, float.MaxValue / 2);
+        [Fact] public void Double() => Test(double.MinValue, double.MaxValue, double.MaxValue / 2);
         [Fact] public void Boolean() => Test(false, true, false);
-        [Fact] public void Decimal() => Test((decimal)1.5, (decimal)99.5, (decimal)0.5);
+        [Fact] public void Decimal() => Test(decimal.MinValue, decimal.MaxValue, decimal.MaxValue / 2);
 
         private void Test<T>(T oldValue, T newValue, T intermediateValue)
         {
