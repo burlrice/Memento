@@ -13,7 +13,7 @@ namespace UnitTests
             var expected = oldValue;
 
             {
-                using var memento = new Memento(ref oldValue);
+                using var memento = new Memento<int>(ref oldValue);
                 int test = 0;
 
                 memento.Set(newValue);

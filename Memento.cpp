@@ -10,107 +10,44 @@ using namespace System;
 
 using namespace Pertinax;
 
-Memento::Memento(SByte% rhs)
+generic <class T>
+Memento<T>::Memento(T% rhs)
 {
-	throw gcnew System::NotImplementedException();
-}
-
-Memento::Memento(Byte% rhs)
-{
-	throw gcnew System::NotImplementedException();
-}
-
-Memento::Memento(Int16% rhs)
-{
-	throw gcnew System::NotImplementedException();
-}
-
-Memento::Memento(UInt16% rhs)
-{
-	throw gcnew System::NotImplementedException();
-}
-
-Memento::Memento(Int32% rhs)
-{
-	// TODO: rem // pin_ptr<Int32> pin = &rhs;
-	// TODO: rem // void* ptr = pin;
-	// TODO: rem // 
-	// TODO: rem // ref = ptr;
-
-	pin_ptr<Int32> pin = &rhs;
+	pin_ptr<T> pin = &rhs;
 
 	ref = (void*)pin;
-	int32Value = rhs;
+	value = rhs;
 }
 
-Memento::Memento(UInt32% rhs)
-{
-	throw gcnew System::NotImplementedException();
-}
-
-Memento::Memento(Int64% rhs)
-{
-	throw gcnew System::NotImplementedException();
-}
-
-Memento::Memento(UInt64% rhs)
-{
-	throw gcnew System::NotImplementedException();
-}
-
-Memento::Memento(Char% rhs)
-{
-	throw gcnew System::NotImplementedException();
-}
-
-Memento::Memento(Single% rhs)
-{
-	throw gcnew System::NotImplementedException();
-}
-
-Memento::Memento(Double% rhs)
-{
-	throw gcnew System::NotImplementedException();
-}
-
-Memento::Memento(Boolean% rhs)
-{
-	throw gcnew System::NotImplementedException();
-}
-
-Memento::Memento(Decimal% rhs)
-{
-	throw gcnew System::NotImplementedException();
-}
-
-Memento::~Memento()
+generic <class T>
+Memento<T>::~Memento()
 {
 	this->!Memento();
 }
 
-Memento::!Memento()
+generic <class T>
+Memento<T>::!Memento()
 {
-	int* p = (int*)ref;
-
-	*p = int32Value;
+	if (T::typeid == Int32::typeid)
+	{
+		*((int*)ref) = (int)value;
+	}
 }
 
-void Memento::Set(Int32 rhs)
+generic <class T>
+void Memento<T>::Get(T% result)
 {
-	int* p = (int*)ref;
-
-	*p = rhs;
+	if (T::typeid == Int32::typeid)
+	{
+		result = (T)*((int*)ref);
+	}
 }
 
-void Memento::Set(Boolean rhs)
+generic <class T>
+void Memento<T>::Set(T rhs)
 {
-}
-
-void Memento::Get(Int32% result)
-{
-	// TODO: rem // int* p = (int*)ref;
-	// TODO: rem // 
-	// TODO: rem // result = *p;
-
-	result = *((int*)ref);
+	if (T::typeid == Int32::typeid)
+	{
+		*((int*)ref) = (int)rhs;
+	}
 }
