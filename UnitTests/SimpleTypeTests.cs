@@ -15,6 +15,8 @@ namespace UnitTests
             this.output = output;
         }
 
+        // TODO: use type.MinValue, type.MaxValue
+
         [Fact] public void SByte() => Test((sbyte)1, (sbyte)99, (sbyte)0);
         [Fact] public void Byte() => Test((byte)1, (byte)99, (byte)0);
         [Fact] public void Int16() => Test((short)1, (short)99, (short)0);
