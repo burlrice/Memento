@@ -13,6 +13,28 @@ using namespace Pertinax;
 generic <class T>
 Memento<T>::Memento(T% rhs)
 {
+	array<System::Type^ const>^ types =
+	{
+		SByte::typeid,
+		Byte::typeid,
+		Int16::typeid,
+		UInt16::typeid,
+		Int32::typeid,
+		UInt32::typeid,
+		Int64::typeid,
+		UInt64::typeid,
+		Char::typeid,
+		Single::typeid,
+		Double::typeid,
+		Boolean::typeid,
+		Decimal::typeid,
+	};
+
+	if (!System::Linq::Enumerable::ToList<System::Type^ const>(types)->Contains(T::typeid))
+	{
+		throw gcnew ArgumentException(T::typeid->Name + "not supported");
+	}
+
 	pin_ptr<T> pin = &rhs;
 
 	ref = (void*)pin;
