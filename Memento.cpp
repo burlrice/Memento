@@ -10,13 +10,77 @@ using namespace System;
 
 using namespace Pertinax;
 
+Memento::Memento(SByte% rhs)
+{
+	throw gcnew System::NotImplementedException();
+}
+
+Memento::Memento(Byte% rhs)
+{
+	throw gcnew System::NotImplementedException();
+}
+
+Memento::Memento(Int16% rhs)
+{
+	throw gcnew System::NotImplementedException();
+}
+
+Memento::Memento(UInt16% rhs)
+{
+	throw gcnew System::NotImplementedException();
+}
+
 Memento::Memento(Int32% rhs)
 {
-	pin_ptr<Int32> pin = &rhs;
-	void* ptr = pin;
+	// TODO: rem // pin_ptr<Int32> pin = &rhs;
+	// TODO: rem // void* ptr = pin;
+	// TODO: rem // 
+	// TODO: rem // ref = ptr;
 
-	ref = ptr;
+	pin_ptr<Int32> pin = &rhs;
+
+	ref = (void*)pin;
 	int32Value = rhs;
+}
+
+Memento::Memento(UInt32% rhs)
+{
+	throw gcnew System::NotImplementedException();
+}
+
+Memento::Memento(Int64% rhs)
+{
+	throw gcnew System::NotImplementedException();
+}
+
+Memento::Memento(UInt64% rhs)
+{
+	throw gcnew System::NotImplementedException();
+}
+
+Memento::Memento(Char% rhs)
+{
+	throw gcnew System::NotImplementedException();
+}
+
+Memento::Memento(Single% rhs)
+{
+	throw gcnew System::NotImplementedException();
+}
+
+Memento::Memento(Double% rhs)
+{
+	throw gcnew System::NotImplementedException();
+}
+
+Memento::Memento(Boolean% rhs)
+{
+	throw gcnew System::NotImplementedException();
+}
+
+Memento::Memento(Decimal% rhs)
+{
+	throw gcnew System::NotImplementedException();
 }
 
 Memento::~Memento()
@@ -42,9 +106,11 @@ void Memento::Set(Boolean rhs)
 {
 }
 
-void Pertinax::Memento::Get(Int32% result)
+void Memento::Get(Int32% result)
 {
-	int* p = (int*)ref;
+	// TODO: rem // int* p = (int*)ref;
+	// TODO: rem // 
+	// TODO: rem // result = *p;
 
-	result = *p;
+	result = *((int*)ref);
 }
