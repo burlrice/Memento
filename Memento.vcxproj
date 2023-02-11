@@ -119,7 +119,7 @@
       <AdditionalDependencies />
     </Link>
     <PostBuildEvent>
-      <Command>copy $(TargetPath) $(ProjectDir)lib\net7.0</Command>
+      <Command>copy $(TargetDir)*.dll $(ProjectDir)lib\net7.0</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
